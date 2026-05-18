@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f3f3f3;
+  padding: 20px;
+}
+
+/* GRID PRINCIPAL */
+.portal {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr;
+  gap: 15px;
+}
+
+/* HEADER */
+.header {
+  grid-column: 1 / 4;
+
+  background: #c0bde7;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  padding: 20px;
+
+  border-radius: 10px;
+}
+
+.header img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+
+  border-radius: 10px;
+  background: white;
+  padding: 5px;
+}
+
+.titulo h1 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.titulo p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* CARDS */
+.noticia {
+  background: white;
+  padding: 18px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* CARD PRINCIPAL */
+.principal {
+  grid-row: 2 / 4;
+}
+
+.principal h2 {
+  font-size: 2rem;
+  margin: 15px 0;
+  line-height: 1.2;
+}
+
+.principal p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* CARDS SECUNDÁRIOS */
+.secundaria h3 {
+  font-size: 1.5rem;
+  margin: 12px 0;
+  line-height: 1.3;
+}
+
+.secundaria p {
+  color: #444;
+  line-height: 1.4;
+}
+
+/* CARDS PEQUENOS */
+.pequena h4 {
+  font-size: 1.3rem;
+  margin: 12px 0;
+  line-height: 1.3;
+}
+
+.pequena p {
+  color: #444;
+  line-height: 1.4;
+}
+
+/* CATEGORIA */
+.categoria {
+  color: #d33;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
