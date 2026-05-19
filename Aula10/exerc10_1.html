@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cantoras</title>
+
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f4f8;
+      padding: 30px;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .buttons,
+    .lyrics,
+    .photo,
+    .video {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .buttons {
+      width: 180px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #6d28d9;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #5b21b6;
+      transform: scale(1.02);
+    }
+
+    .lyrics {
+      width: 300px;
+      min-height: 220px;
+      line-height: 1.6;
+    }
+
+    .photo {
+      width: 220px;
+      text-align: center;
+    }
+
+    .photo img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .video {
+      width: 360px;
+    }
+
+    .video h3 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    iframe {
+      width: 100%;
+      height: 220px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 900px) {
+
+      .container {
+        flex-direction: column;
+      }
+
+      .buttons,
+      .lyrics,
+      .photo,
+      .video {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- BOTÕES -->
+
+    <div class="buttons">
+
+      <button onclick="showArtist('shakira')">
+        Shakira
+      </button>
+
+      <button onclick="showArtist('gaga')">
+        Lady Gaga
+      </button>
+
+      <button onclick="showArtist('madonna')">
+        Madonna
+      </button>
+
+    </div>
+
+    <!-- LETRAS -->
+
+    <div class="lyrics" id="lyricsBox">
+
+      Clique em uma cantora para ver um trecho da música.
+
+    </div>
+
+    <!-- FOTO -->
+
+    <div class="photo">
+
+      <img
+        id="artistImage"
+        src="https://wallpapers.com/images/hd/singer-shakira-portrait-871mvituhvbv5mrv.jpg"
+        alt="Imagem da artista">
+
+    </div>
+
+    <!-- VÍDEO -->
+
+    <div class="video">
+
+      <h3 id="videoTitle">
+        Hips Don't Lie
+      </h3>
+
+      <iframe
+        id="artistVideo"
+        src="https://www.youtube.com/embed/C7ssrLSheg4"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    function showArtist(artist) {
+
+      const lyricsBox = document.getElementById("lyricsBox");
+
+      const image = document.getElementById("artistImage");
+
+      const video = document.getElementById("artistVideo");
+
+      const videoTitle = document.getElementById("videoTitle");
+
+
+
+      // SHAKIRA
+
+      if (artist === "shakira") {
+
+        lyricsBox.innerHTML = `
+          <strong>Hips Don't Lie</strong><br><br>
+
+          I'm on tonight <br>
+          You know my hips don't lie <br>
+          And I'm starting to feel it's right <br>
+          All the attraction, the tension <br>
+          Don't you see baby, this is perfection
+        `;
+
+        image.src =
+          "https://wallpapers.com/images/hd/singer-shakira-portrait-871mvituhvbv5mrv.jpg";
+
+        video.src =
+          "https://www.youtube.com/embed/C7ssrLSheg4";
+
+        videoTitle.innerHTML =
+          "Hips Don't Lie";
+
+      }
+
+
+
+      // LADY GAGA
+
+      else if (artist === "gaga") {
+
+        lyricsBox.innerHTML = `
+          <strong>Bad Romance</strong><br><br>
+
+          You know that I want you <br>
+          And you know that I need you <br>
+          I want it bad <br>
+          Your bad romance <br><br>
+
+          I want your love and I want your revenge <br>
+          You and me could write a bad romance
+        `;
+
+        image.src =
+          "https://s2-oglobo.glbimg.com/Bs7aa1vYUGsr8IQCe0WilUfDdZo=/0x0:745x456/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2025/z/r/jIZgwyQdC8jV8H7KTlCQ/gaga1.png";
+
+        video.src =
+          "https://www.youtube.com/embed/qrO4YZeyl0I";
+
+        videoTitle.innerHTML =
+          "Bad Romance";
+
+      }
+
+
+
+      // MADONNA
+
+      else if (artist === "madonna") {
+
+        lyricsBox.innerHTML = `
+          <strong>Like a Prayer</strong><br><br>
+
+          Life is a mystery <br>
+          Everyone must stand alone <br>
+          I hear you call my name <br>
+          And it feels like home
+        `;
+
+        image.src =
+          "https://assets.vogue.com/photos/5e7f8b953d2fb10008ff3610/master/w_2560%2Cc_limit/music_vogue-2%2520(1).jpg";
+
+        video.src =
+          "https://www.youtube.com/embed/79fzeNUqQbQ";
+
+        videoTitle.innerHTML =
+          "Like a Prayer";
+
+      }
+
+    }
+
+  </script>
+
+</body>
+
+</html>
